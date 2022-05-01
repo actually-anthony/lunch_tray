@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.example.lunchtray.databinding.FragmentStartBinding
 
 class StartFragment : Fragment() {
@@ -25,6 +26,10 @@ class StartFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         // used for data binding in fragment_start.xml
         binding?.startFragment = this
+    }
+
+    fun startOrder() {
+        findNavController().navigate(R.id.action_startFragment_to_entreeFragment)
     }
 
 
