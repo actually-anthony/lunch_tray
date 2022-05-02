@@ -34,6 +34,8 @@
                 <RadioButton
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:checked="@{viewModel.entree.equals(@string/cauliflower)}"
+                    android:onClick="@{() -> viewModel.setEntree(@string/cauliflower, 7.0)}"
                     android:text="@string/cauliflower">
                 </RadioButton>
 
@@ -54,6 +56,8 @@
                 <RadioButton
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:checked="@{viewModel.entree.equals(@string/three_bean_chili)}"
+                    android:onClick="@{() -> viewModel.setEntree(@string/three_bean_chili, 4.0)}"
                     android:text="@string/three_bean_chili">
                 </RadioButton>
 
@@ -74,6 +78,8 @@
                 <RadioButton
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:checked="@{viewModel.entree.equals(@string/mushroom_pasta)}"
+                    android:onClick="@{() -> viewModel.setEntree(@string/mushroom_pasta, 5.50)}"
                     android:text="@string/mushroom_pasta">
                 </RadioButton>
 
@@ -94,6 +100,8 @@
                 <RadioButton
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:checked="@{viewModel.entree.equals(@string/spicy_black_bean_skillet)}"
+                    android:onClick="@{() -> viewModel.setEntree(@string/spicy_black_bean_skillet, 5.50)}"
                     android:text="@string/spicy_black_bean_skillet">
                 </RadioButton>
 
@@ -126,6 +134,7 @@
         </TextView>
 
         <Button
+            style="?attr/materialButtonOutlinedStyle"
             android:id="@+id/cancel_button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
