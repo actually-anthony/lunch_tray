@@ -50,12 +50,23 @@ class LunchViewModel: ViewModel() {
     fun setEntree(name: String, price: Double) {
         _entree.value = name
         _entreePrice.value = price
+        updatePrice()
+    }
 
+    fun setSide(name: String, price: Double) {
+        _side.value = name
+        _sidePrice.value = price
+        updatePrice()
+    }
+
+    fun setAccompaniment(name: String, price: Double) {
+        _accompaniment.value = name
+        _accompanimentPrice.value = price
         updatePrice()
     }
 
 
-    fun updatePrice() {
+    private fun updatePrice() {
         // None carry a null value due to resetOrder()
         _price.value = sidePrice.value!!.plus(entreePrice.value!!).plus(accompanimentPrice.value!!)
     }
