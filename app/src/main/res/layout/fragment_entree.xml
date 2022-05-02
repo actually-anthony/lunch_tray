@@ -1,14 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     tools:context=".EntreeFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
 
-</FrameLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:orientation="vertical">
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/cauliflower">
+                </RadioButton>
+
+                <TextView
+                    style="@style/Description_textview"
+                    android:text="@string/cauliflower_description">
+                </TextView>
+
+                <TextView
+                    style="@style/Price_textview"
+                    android:text="@string/cauliflower_price">
+                </TextView>
+
+                <View
+                    style="@style/Divider"
+                    android:layout_marginTop="@dimen/margin_between_elements"/>
+
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/three_bean_chili">
+                </RadioButton>
+
+                <TextView
+                    style="@style/Description_textview"
+                    android:text="@string/three_bean_chili_description">
+                </TextView>
+
+                <TextView
+                    style="@style/Price_textview"
+                    android:text="$4.00">
+                </TextView>
+
+                <View
+                    style="@style/Divider"
+                    android:layout_marginTop="@dimen/margin_between_elements"/>
+
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/mushroom_pasta">
+                </RadioButton>
+
+                <TextView
+                    style="@style/Description_textview"
+                    android:text="@string/mushroom_pasta_description">
+                </TextView>
+
+                <TextView
+                    style="@style/Price_textview"
+                    android:text="$5.50">
+                </TextView>
+
+                <View
+                    style="@style/Divider"
+                    android:layout_marginTop="@dimen/margin_between_elements"/>
+
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/spicy_black_bean_skillet">
+                </RadioButton>
+
+                <TextView
+                    style="@style/Description_textview"
+                    android:text="@string/spicy_black_bean_skillet_description">
+                </TextView>
+
+                <TextView
+                    style="@style/Price_textview"
+                    android:text="$5.50">
+                </TextView>
+
+                <View
+                    style="@style/Divider"
+                    android:layout_marginTop="@dimen/margin_between_elements"/>
+            </RadioGroup>
+
+            <TextView
+                android:layout_marginTop="@dimen/margin_between_elements"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="end"
+                tools:text="@string/subtotal_price">
+
+            </TextView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</layout>
