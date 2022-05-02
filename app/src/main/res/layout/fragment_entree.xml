@@ -6,8 +6,12 @@
 
     <data>
         <variable
-            name="startFragment"
+            name="entreeFragment"
             type="com.example.lunchtray.EntreeFragment" />
+
+        <variable
+            name="viewModel"
+            type="com.example.lunchtray.model.LunchViewModel" />
     </data>
 
     <ScrollView
@@ -117,8 +121,8 @@
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@id/entree_options"
             app:layout_constraintEnd_toEndOf="parent"
-            tools:text="Subtotal: $5.00"
-            android:text="@{@string/subtotal_price(5)}">
+            tools:text="@{@string/subtotal_price(viewModel.price)}"
+            >
         </TextView>
 
         <Button
