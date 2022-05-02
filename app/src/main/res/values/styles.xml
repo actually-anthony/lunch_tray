@@ -15,4 +15,12 @@
     <style name="Price_textview" parent="Description_textview">
         <item name="android:layout_marginTop">@dimen/margin_between_elements</item>
     </style>
+
+    <style name="Cancel_button" parent="Widget.MaterialComponents.Button">
+        <item name="android:layout_width">0dp</item>
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_between_elements"
+        android:text="@string/next"
+    </style>
 </resources>

@@ -37,7 +37,7 @@ class LunchViewModel: ViewModel() {
         resetOrder()
     }
 
-    private fun resetOrder() {
+    fun resetOrder() {
         _entree.value = ""
         _side.value = ""
         _accompaniment.value = ""

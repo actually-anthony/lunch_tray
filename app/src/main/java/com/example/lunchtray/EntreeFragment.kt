@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import com.example.lunchtray.databinding.FragmentEntreeBinding
 import com.example.lunchtray.model.LunchViewModel
 
@@ -14,8 +15,6 @@ class EntreeFragment : Fragment() {
 
     private var binding: FragmentEntreeBinding? = null
     private val sharedViewModel: LunchViewModel by activityViewModels()
-
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -41,6 +40,11 @@ class EntreeFragment : Fragment() {
             entreeFragment = this@EntreeFragment
 
         }
+    }
+
+    fun cancelOrder() {
+        sharedViewModel.resetOrder()
+        findNavController().navigate(R.id.action_entreeFragment_to_startFragment)
     }
 
 
