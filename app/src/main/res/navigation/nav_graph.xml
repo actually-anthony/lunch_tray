@@ -24,5 +24,19 @@
             app:destination="@id/startFragment"
             app:popUpTo="@id/startFragment"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_entreeFragment_to_sideFragment"
+            app:destination="@id/sideFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/sideFragment"
+        android:name="com.example.lunchtray.SideFragment"
+        android:label="fragment_side"
+        tools:layout="@layout/fragment_side" >
+        <action
+            android:id="@+id/action_sideFragment_to_startFragment"
+            app:destination="@id/startFragment"
+            app:popUpTo="@id/startFragment"
+            app:popUpToInclusive="true" />
     </fragment>
 </navigation>

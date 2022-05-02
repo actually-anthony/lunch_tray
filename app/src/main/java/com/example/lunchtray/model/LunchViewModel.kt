@@ -1,9 +1,11 @@
 package com.example.lunchtray.model
 
+import android.provider.Settings.Global.getString
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
+import com.example.lunchtray.R
 import java.text.NumberFormat
 
 class LunchViewModel: ViewModel() {
@@ -55,15 +57,28 @@ class LunchViewModel: ViewModel() {
 
     fun setSide(name: String, price: Double) {
         _side.value = name
-        _sidePrice.value = price
+        _sidePrice.value = getMenuPrice(name)
         updatePrice()
     }
 
     fun setAccompaniment(name: String, price: Double) {
         _accompaniment.value = name
-        _accompanimentPrice.value = price
+        _accompanimentPrice.value = getMenuPrice(name)
         updatePrice()
     }
+
+    // used for as helper for setting and for default values
+    fun getMenuPrice(name: String): Double{
+        val price = when(name) {
+            "Cauliflower" -> 7.0
+            "Three Bean Chili" -> 4.0
+            "Mushroom Pasta" -> 5.0
+            else -> 0.0
+        }
+        return price
+    }
+
+
 
 
     private fun updatePrice() {

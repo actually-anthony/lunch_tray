@@ -150,6 +150,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_between_elements"
+            android:onClick="@{() -> entreeFragment.goToNextScreen()}"
             app:layout_constraintStart_toEndOf="@id/cancel_button"
             app:layout_constraintTop_toBottomOf="@id/subtotal"
             app:layout_constraintEnd_toEndOf="parent"
