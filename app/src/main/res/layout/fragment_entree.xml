@@ -35,7 +35,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:checked="@{viewModel.entree.equals(@string/cauliflower)}"
-                    android:onClick="@{() -> viewModel.setEntree(@string/cauliflower, 7.0)}"
+                    android:onClick="@{() -> viewModel.setEntree(@string/cauliflower)}"
                     android:text="@string/cauliflower">
                 </RadioButton>
 
@@ -57,7 +57,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:checked="@{viewModel.entree.equals(@string/three_bean_chili)}"
-                    android:onClick="@{() -> viewModel.setEntree(@string/three_bean_chili, 4.0)}"
+                    android:onClick="@{() -> viewModel.setEntree(@string/three_bean_chili)}"
                     android:text="@string/three_bean_chili">
                 </RadioButton>
 
@@ -79,7 +79,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:checked="@{viewModel.entree.equals(@string/mushroom_pasta)}"
-                    android:onClick="@{() -> viewModel.setEntree(@string/mushroom_pasta, 5.50)}"
+                    android:onClick="@{() -> viewModel.setEntree(@string/mushroom_pasta)}"
                     android:text="@string/mushroom_pasta">
                 </RadioButton>
 
@@ -101,7 +101,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:checked="@{viewModel.entree.equals(@string/spicy_black_bean_skillet)}"
-                    android:onClick="@{() -> viewModel.setEntree(@string/spicy_black_bean_skillet, 5.50)}"
+                    android:onClick="@{() -> viewModel.setEntree(@string/spicy_black_bean_skillet)}"
                     android:text="@string/spicy_black_bean_skillet">
                 </RadioButton>
 

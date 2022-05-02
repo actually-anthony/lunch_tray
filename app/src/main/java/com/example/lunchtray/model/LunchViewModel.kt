@@ -49,19 +49,19 @@ class LunchViewModel: ViewModel() {
         _accompanimentPrice.value = 0.0
     }
 
-    fun setEntree(name: String, price: Double) {
+    fun setEntree(name: String) {
         _entree.value = name
-        _entreePrice.value = price
+        _entreePrice.value = getMenuPrice(name)
         updatePrice()
     }
 
-    fun setSide(name: String, price: Double) {
+    fun setSide(name: String) {
         _side.value = name
         _sidePrice.value = getMenuPrice(name)
         updatePrice()
     }
 
-    fun setAccompaniment(name: String, price: Double) {
+    fun setAccompaniment(name: String) {
         _accompaniment.value = name
         _accompanimentPrice.value = getMenuPrice(name)
         updatePrice()
@@ -72,7 +72,8 @@ class LunchViewModel: ViewModel() {
         val price = when(name) {
             "Cauliflower" -> 7.0
             "Three Bean Chili" -> 4.0
-            "Mushroom Pasta" -> 5.0
+            "Mushroom Pasta" -> 5.5
+            "Spicy Black bean Skillet" -> 5.5
             else -> 0.0
         }
         return price

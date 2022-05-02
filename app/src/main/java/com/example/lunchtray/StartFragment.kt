@@ -33,6 +33,7 @@ class StartFragment : Fragment() {
 
     fun startOrder() {
         findNavController().navigate(R.id.action_startFragment_to_entreeFragment)
+
     }
 
 
