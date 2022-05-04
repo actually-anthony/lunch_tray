@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import com.example.lunchtray.databinding.FragmentEntreeBinding
 import com.example.lunchtray.databinding.FragmentSideBinding
 import com.example.lunchtray.model.LunchViewModel
@@ -47,5 +48,13 @@ class SideFragment : Fragment() {
             sideFragment = this@SideFragment
 
         }
+    }
+
+    fun cancelOrder() {
+        findNavController().navigate(R.id.action_sideFragment_to_startFragment)
+    }
+
+    fun goToNextScreen() {
+        findNavController().navigate(R.id.action_sideFragment_to_accompanimentFragment)
     }
 }

@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import com.example.lunchtray.databinding.FragmentAccompanimentBinding
 import com.example.lunchtray.databinding.FragmentSideBinding
 import com.example.lunchtray.model.LunchViewModel
@@ -45,5 +46,13 @@ class AccompanimentFragment : Fragment() {
 
     }
 
+    fun cancelOrder() {
+        findNavController().navigate(R.id.action_accompanimentFragment_to_startFragment)
+    }
 
+    fun goToNextScreen() {
+        findNavController().navigate(R.id.action_accompanimentFragment_to_summaryFragment)
+    }
 }
+
+

@@ -14,12 +14,152 @@
             type="com.example.lunchtray.model.LunchViewModel" />
     </data>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/hello_blank_fragment">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    </TextView>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp">
+
+            <RadioGroup
+                android:id="@+id/entree_options"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                >
+
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:checked="@{viewModel.entree.equals(@string/cauliflower)}"
+                    android:onClick="@{() -> viewModel.setEntree(@string/cauliflower)}"
+                    android:text="@string/cauliflower">
+                </RadioButton>
+
+                <TextView
+                    style="@style/Description_textview"
+                    android:text="@string/cauliflower_description">
+                </TextView>
+
+                <TextView
+                    style="@style/Price_textview"
+                    android:text="@string/cauliflower_price">
+                </TextView>
+
+                <View
+                    style="@style/Divider"
+                    android:layout_marginTop="@dimen/margin_between_elements"/>
+
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:checked="@{viewModel.entree.equals(@string/three_bean_chili)}"
+                    android:onClick="@{() -> viewModel.setEntree(@string/three_bean_chili)}"
+                    android:text="@string/three_bean_chili">
+                </RadioButton>
+
+                <TextView
+                    style="@style/Description_textview"
+                    android:text="@string/three_bean_chili_description">
+                </TextView>
+
+                <TextView
+                    style="@style/Price_textview"
+                    android:text="@string/three_bean_chili_price">
+                </TextView>
+
+                <View
+                    style="@style/Divider"
+                    android:layout_marginTop="@dimen/margin_between_elements"/>
+
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:checked="@{viewModel.entree.equals(@string/mushroom_pasta)}"
+                    android:onClick="@{() -> viewModel.setEntree(@string/mushroom_pasta)}"
+                    android:text="@string/mushroom_pasta">
+                </RadioButton>
+
+                <TextView
+                    style="@style/Description_textview"
+                    android:text="@string/mushroom_pasta_description">
+                </TextView>
+
+                <TextView
+                    style="@style/Price_textview"
+                    android:text="@string/mushroom_pasta_price">
+                </TextView>
+
+                <View
+                    style="@style/Divider"
+                    android:layout_marginTop="@dimen/margin_between_elements"/>
+
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:checked="@{viewModel.entree.equals(@string/spicy_black_bean_skillet)}"
+                    android:onClick="@{() -> viewModel.setEntree(@string/spicy_black_bean_skillet)}"
+                    android:text="@string/spicy_black_bean_skillet">
+                </RadioButton>
+
+                <TextView
+                    style="@style/Description_textview"
+                    android:text="@string/spicy_black_bean_skillet_description">
+                </TextView>
+
+                <TextView
+                    style="@style/Price_textview"
+                    android:text="@string/spicy_black_bean_skillet_price">
+                </TextView>
+
+                <View
+                    style="@style/Divider"
+                    android:layout_marginTop="@dimen/margin_between_elements"/>
+
+            </RadioGroup>
+
+
+            <TextView
+                android:id="@+id/subtotal"
+                android:layout_marginTop="@dimen/margin_between_elements"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/entree_options"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="@{@string/subtotal_price(viewModel.price)}"
+                >
+            </TextView>
+
+            <Button
+                style="?attr/materialButtonOutlinedStyle"
+                android:id="@+id/cancel_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:onClick="@{() -> accompanimentFragment.cancelOrder()}"
+                app:layout_constraintTop_toTopOf="@id/next_button"
+                app:layout_constraintEnd_toStartOf="@id/next_button"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginEnd="16dp"
+                android:text="@string/cancel"/>
+
+            <Button
+                android:id="@+id/next_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_between_elements"
+                android:onClick="@{() -> accompanimentFragment.goToNextScreen()}"
+                app:layout_constraintStart_toEndOf="@id/cancel_button"
+                app:layout_constraintTop_toBottomOf="@id/subtotal"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:text="@string/next"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
 
 
 </layout>

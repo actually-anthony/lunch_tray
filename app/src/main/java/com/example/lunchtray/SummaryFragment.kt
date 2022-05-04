@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import com.example.lunchtray.databinding.FragmentSummaryBinding
 import com.example.lunchtray.model.LunchViewModel
 
@@ -33,5 +34,9 @@ class SummaryFragment : Fragment() {
             summaryFragment = this@SummaryFragment
             lifecycleOwner = viewLifecycleOwner
         }
+    }
+
+    fun cancelOrder() {
+        findNavController().navigate(R.id.action_summaryFragment_to_startFragment)
     }
 }
