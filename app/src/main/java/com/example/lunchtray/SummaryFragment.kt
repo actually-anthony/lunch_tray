@@ -6,46 +6,32 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
-import com.example.lunchtray.databinding.FragmentEntreeBinding
-import com.example.lunchtray.databinding.FragmentSideBinding
+import com.example.lunchtray.databinding.FragmentSummaryBinding
 import com.example.lunchtray.model.LunchViewModel
 
 
-class SideFragment : Fragment() {
+class SummaryFragment : Fragment() {
 
-    private var binding: FragmentSideBinding? = null
+    private var binding: FragmentSummaryBinding? = null
     private val sharedViewModel: LunchViewModel by activityViewModels()
 
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val fragmentBinding = FragmentSideBinding.inflate(inflater,container,false)
+        val fragmentBinding = FragmentSummaryBinding.inflate(inflater,container,true)
         binding = fragmentBinding
-        return fragmentBinding.root
-
+        return  fragmentBinding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         binding?.apply {
-            // used to update UI
-            lifecycleOwner = viewLifecycleOwner
-
-            // used for data binding in xml
             viewModel = sharedViewModel
-            // this = binding instance
-            // @EntreeFragment = literally this class
-            sideFragment = this@SideFragment
-
+            summaryFragment = this@SummaryFragment
+            lifecycleOwner = viewLifecycleOwner
         }
     }
 }
