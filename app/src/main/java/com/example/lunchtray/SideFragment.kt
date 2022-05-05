@@ -51,6 +51,7 @@ class SideFragment : Fragment() {
     }
 
     fun cancelOrder() {
+        sharedViewModel.resetOrder()
         findNavController().navigate(R.id.action_sideFragment_to_startFragment)
     }
 

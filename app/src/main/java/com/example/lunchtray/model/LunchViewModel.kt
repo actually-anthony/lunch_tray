@@ -74,6 +74,10 @@ class LunchViewModel: ViewModel() {
             "Three Bean Chili" -> 4.0
             "Mushroom Pasta" -> 5.5
             "Spicy Black bean Skillet" -> 5.5
+            "Summer Salad" -> 2.5
+            "Butternut Squash Soup" -> 3.0
+            "Spicy Potatoes" -> 2.0
+            "Coconut Rice" -> 1.5
             else -> 0.0
         }
         return price
