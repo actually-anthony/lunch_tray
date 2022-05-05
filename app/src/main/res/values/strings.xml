@@ -30,4 +30,13 @@
     <string name="coconut_rice">Coconut Rice</string>
     <string name="coconut_rice_description">Rice, coconut milk, lime, and sugar</string>
     <string name="_1_50">$1.50</string>
+    <string name="lunch_roll">Lunch Roll</string>
+    <string name="lunch_roll_description">Fresh baked roll made in house</string>
+    <string name="lunch_roll_price">$0.50</string>
+    <string name="mixed_berries">Mixed Berries</string>
+    <string name="mixed_berries_description">Starberries, blueberries, raspberries, and huckleberries</string>
+    <string name="mixed_berries_price">$1.00</string>
+    <string name="pickled_veggies">Pickled Veggies</string>
+    <string name="pickled_veggies_description">Pickled cucumbers and carrots, made in house</string>
+    <string name="pickled_veggies_price">$0.50</string>
 </resources>

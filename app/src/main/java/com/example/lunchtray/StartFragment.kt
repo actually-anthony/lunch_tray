@@ -32,6 +32,12 @@ class StartFragment : Fragment() {
     }
 
     fun startOrder() {
+        if (sharedViewModel.noFoodSelected()) {
+            sharedViewModel.setEntree(getString(R.string.cauliflower))
+            sharedViewModel.setSide(getString(R.string.summer_salad))
+            sharedViewModel.setAccompaniment(getString(R.string.lunch_roll))
+        }
+
         findNavController().navigate(R.id.action_startFragment_to_entreeFragment)
 
     }

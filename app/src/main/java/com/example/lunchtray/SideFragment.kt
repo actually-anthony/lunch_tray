@@ -40,11 +40,8 @@ class SideFragment : Fragment() {
         binding?.apply {
             // used to update UI
             lifecycleOwner = viewLifecycleOwner
-
             // used for data binding in xml
             viewModel = sharedViewModel
-            // this = binding instance
-            // @EntreeFragment = literally this class
             sideFragment = this@SideFragment
 
         }

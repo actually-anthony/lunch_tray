@@ -67,6 +67,10 @@ class LunchViewModel: ViewModel() {
         updatePrice()
     }
 
+    fun noFoodSelected(): Boolean {
+        return _entree.value.isNullOrEmpty()
+    }
+
     // used for as helper for setting and for default values
     fun getMenuPrice(name: String): Double{
         val price = when(name) {
@@ -78,6 +82,9 @@ class LunchViewModel: ViewModel() {
             "Butternut Squash Soup" -> 3.0
             "Spicy Potatoes" -> 2.0
             "Coconut Rice" -> 1.5
+            "Lunch Roll" -> 0.50
+            "Mixed Berries" -> 1.0
+            "Pickled Veggies" -> 0.5
             else -> 0.0
         }
         return price

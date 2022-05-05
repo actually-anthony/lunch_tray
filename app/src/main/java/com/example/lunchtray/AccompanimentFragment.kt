@@ -47,6 +47,7 @@ class AccompanimentFragment : Fragment() {
     }
 
     fun cancelOrder() {
+        sharedViewModel.resetOrder()
         findNavController().navigate(R.id.action_accompanimentFragment_to_startFragment)
     }
 

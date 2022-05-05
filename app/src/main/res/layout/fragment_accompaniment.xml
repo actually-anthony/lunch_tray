@@ -34,19 +34,19 @@
                 <RadioButton
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:checked="@{viewModel.entree.equals(@string/cauliflower)}"
-                    android:onClick="@{() -> viewModel.setEntree(@string/cauliflower)}"
-                    android:text="@string/cauliflower">
+                    android:checked="@{viewModel.accompaniment.equals(@string/lunch_roll)}"
+                    android:onClick="@{() -> viewModel.setAccompaniment(@string/lunch_roll)}"
+                    android:text="@string/lunch_roll">
                 </RadioButton>
 
                 <TextView
                     style="@style/Description_textview"
-                    android:text="@string/cauliflower_description">
+                    android:text="@string/lunch_roll_description">
                 </TextView>
 
                 <TextView
                     style="@style/Price_textview"
-                    android:text="@string/cauliflower_price">
+                    android:text="@string/lunch_roll_price">
                 </TextView>
 
                 <View
@@ -56,19 +56,19 @@
                 <RadioButton
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:checked="@{viewModel.entree.equals(@string/three_bean_chili)}"
-                    android:onClick="@{() -> viewModel.setEntree(@string/three_bean_chili)}"
-                    android:text="@string/three_bean_chili">
+                    android:checked="@{viewModel.accompaniment.equals(@string/mixed_berries)}"
+                    android:onClick="@{() -> viewModel.setAccompaniment(@string/mixed_berries)}"
+                    android:text="@string/mixed_berries">
                 </RadioButton>
 
                 <TextView
                     style="@style/Description_textview"
-                    android:text="@string/three_bean_chili_description">
+                    android:text="@string/mixed_berries_description">
                 </TextView>
 
                 <TextView
                     style="@style/Price_textview"
-                    android:text="@string/three_bean_chili_price">
+                    android:text="@string/mixed_berries_price">
                 </TextView>
 
                 <View
@@ -78,46 +78,25 @@
                 <RadioButton
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:checked="@{viewModel.entree.equals(@string/mushroom_pasta)}"
-                    android:onClick="@{() -> viewModel.setEntree(@string/mushroom_pasta)}"
-                    android:text="@string/mushroom_pasta">
+                    android:checked="@{viewModel.accompaniment.equals(@string/pickled_veggies)}"
+                    android:onClick="@{() -> viewModel.setAccompaniment(@string/pickled_veggies)}"
+                    android:text="@string/pickled_veggies">
                 </RadioButton>
 
                 <TextView
                     style="@style/Description_textview"
-                    android:text="@string/mushroom_pasta_description">
+                    android:text="@string/pickled_veggies_description">
                 </TextView>
 
                 <TextView
                     style="@style/Price_textview"
-                    android:text="@string/mushroom_pasta_price">
+                    android:text="@string/pickled_veggies_price">
                 </TextView>
 
                 <View
                     style="@style/Divider"
                     android:layout_marginTop="@dimen/margin_between_elements"/>
 
-                <RadioButton
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:checked="@{viewModel.entree.equals(@string/spicy_black_bean_skillet)}"
-                    android:onClick="@{() -> viewModel.setEntree(@string/spicy_black_bean_skillet)}"
-                    android:text="@string/spicy_black_bean_skillet">
-                </RadioButton>
-
-                <TextView
-                    style="@style/Description_textview"
-                    android:text="@string/spicy_black_bean_skillet_description">
-                </TextView>
-
-                <TextView
-                    style="@style/Price_textview"
-                    android:text="@string/spicy_black_bean_skillet_price">
-                </TextView>
-
-                <View
-                    style="@style/Divider"
-                    android:layout_marginTop="@dimen/margin_between_elements"/>
 
             </RadioGroup>
 
