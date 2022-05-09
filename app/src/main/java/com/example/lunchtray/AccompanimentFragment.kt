@@ -52,6 +52,8 @@ class AccompanimentFragment : Fragment() {
     }
 
     fun goToNextScreen() {
+        sharedViewModel.updateTax()
+        sharedViewModel.updateTotal()
         findNavController().navigate(R.id.action_accompanimentFragment_to_summaryFragment)
     }
 }

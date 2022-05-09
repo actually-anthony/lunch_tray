@@ -53,6 +53,9 @@
             app:popUpTo="@id/startFragment"
             app:popUpToInclusive="true" />
         <action
+            android:id="@+id/action_accompanimentFragment_self"
+            app:destination="@id/accompanimentFragment" />
+        <action
             android:id="@+id/action_accompanimentFragment_to_summaryFragment"
             app:destination="@id/summaryFragment" />
     </fragment>

@@ -10,6 +10,8 @@ import java.text.NumberFormat
 
 class LunchViewModel: ViewModel() {
 
+
+
     private val _entree = MutableLiveData<String>()
     val entree: LiveData<String> = _entree
 
@@ -29,14 +31,29 @@ class LunchViewModel: ViewModel() {
     val accompanimentPrice = _accompanimentPrice
 
     private val _price = MutableLiveData<Double>()
-
     // formats price to $xx.xx
     val price: LiveData<String> = Transformations.map(_price) {
         NumberFormat.getCurrencyInstance().format(it)
     }
 
+    lateinit var tax: String
+    lateinit var total: String
+
     init {
         resetOrder()
+    }
+
+    fun getPrices(): LiveData<String> {
+        return price
+    }
+
+    fun updateTax(){
+        tax = NumberFormat.getCurrencyInstance().format(_price.value!! * 0.13)
+    }
+
+    // subtotal and tax
+    fun updateTotal(){
+        total = NumberFormat.getCurrencyInstance().format(_price.value!! * 1.13)
     }
 
     fun resetOrder() {
@@ -89,6 +106,8 @@ class LunchViewModel: ViewModel() {
         }
         return price
     }
+
+
 
 
 

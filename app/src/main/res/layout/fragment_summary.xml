@@ -1,23 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app ="http://schemas.android.com/apk/res-auto"
     tools:context=".SummaryFragment">
 
     <data>
         <variable
             name="summaryFragment"
             type="com.example.lunchtray.SummaryFragment" />
-
         <variable
             name="viewModel"
             type="com.example.lunchtray.model.LunchViewModel" />
     </data>
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp">
+
+            <TextView
+                android:id="@+id/summaryTitle"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:text="@string/order_summary" />
+            <TextView
+                android:id="@+id/entreeName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/summaryTitle"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:text="Entree Name"
+                android:text="@{viewModel.entree}"/>
+            <TextView
+                android:id="@+id/sideName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/entreeName"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:text="Side Name"
+                android:text="@{viewModel.side}"/>
+            <TextView
+                android:id="@+id/accompanimentName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/sideName"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:text="Accompaniment Name"
+                android:text="@{viewModel.accompaniment}"/>
+
+            <View
+                android:id="@+id/divider"
+                style="@style/Divider"
+                android:layout_marginTop="@dimen/margin_between_elements"
+                app:layout_constraintTop_toBottomOf="@id/accompanimentName"
+                app:layout_constraintStart_toStartOf="parent"/>
+            <TextView
+                android:id="@+id/subtotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/divider"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="Subtotal: $xx.xx"
+                android:text="@{@string/subtotal_price(viewModel.price)}"/>
+            <TextView
+                android:id="@+id/tax"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/subtotal"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="Tax: $xx.xx"
+                android:text="@{@string/tax_amount(viewModel.tax)}"
+                />
+            <TextView
+                android:id="@+id/total"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tax"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="Total: $xx.xx"
+                android:text="@{@string/total_price(viewModel.total)}"/>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
 </layout>

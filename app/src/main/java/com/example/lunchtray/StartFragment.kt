@@ -12,6 +12,7 @@ import com.example.lunchtray.model.LunchViewModel
 
 class StartFragment : Fragment() {
 
+    // change constaintlayout -> layout then you'll get FragmentStartBinding
     private var binding: FragmentStartBinding? = null
     private val sharedViewModel: LunchViewModel by activityViewModels()
 
