@@ -41,6 +41,14 @@
                 tools:text="Entree Name"
                 android:text="@{viewModel.entree}"/>
             <TextView
+                android:id="@+id/entreePrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/entreeName"
+                android:text="@{viewModel.entreePrice}"/>
+
+            <TextView
                 android:id="@+id/sideName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

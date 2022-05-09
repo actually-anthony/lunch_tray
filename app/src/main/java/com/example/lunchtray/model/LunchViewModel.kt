@@ -16,7 +16,7 @@ class LunchViewModel: ViewModel() {
     val entree: LiveData<String> = _entree
 
     private val _entreePrice = MutableLiveData<Double>()
-    val entreePrice = _entreePrice
+    val entreePrice: LiveData<String> = convertToString(_entreePrice)
 
     private val _side = MutableLiveData<String>()
     val side: LiveData<String> = _side
@@ -41,6 +41,12 @@ class LunchViewModel: ViewModel() {
 
     init {
         resetOrder()
+    }
+
+    private fun convertToString(price: MutableLiveData<Double>): LiveData<String> {
+        return Transformations.map(price) {
+            NumberFormat.getCurrencyInstance().format(it)
+        }
     }
 
     fun getPrices(): LiveData<String> {
@@ -107,14 +113,9 @@ class LunchViewModel: ViewModel() {
         return price
     }
 
-
-
-
-
-
     private fun updatePrice() {
         // None carry a null value due to resetOrder()
-        _price.value = sidePrice.value!!.plus(entreePrice.value!!).plus(accompanimentPrice.value!!)
+        _price.value = _sidePrice.value!!.plus(_entreePrice.value!!).plus(_accompanimentPrice.value!!)
     }
 
 }
