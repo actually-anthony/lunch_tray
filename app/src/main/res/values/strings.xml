@@ -42,4 +42,5 @@
     <string name="pickled_veggies_description">Pickled cucumbers and carrots, made in house</string>
     <string name="pickled_veggies_price">$0.50</string>
     <string name="order_summary">ORDER SUMMARY</string>
+    <string name="submit_order">Submit Order</string>
 </resources>

@@ -112,6 +112,28 @@
                 tools:text="Total: $xx.xx"
                 android:text="@{@string/total_price(viewModel.total)}"/>
 
+            <Button
+                android:id="@+id/submit_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_between_elements"
+                android:onClick="@{() -> summaryFragment.submitOrder()}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/total"
+                android:text="@string/submit_order"/>
+
+
+            <Button
+                style="?attr/materialButtonOutlinedStyle"
+                android:id="@+id/cancel_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="@{() ->  summaryFragment.goToStart()}"
+                app:layout_constraintTop_toBottomOf="@id/submit_button"
+                app:layout_constraintStart_toStartOf="parent"
+                android:text="@string/cancel"/>
+
+
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
