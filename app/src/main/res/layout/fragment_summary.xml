@@ -57,6 +57,13 @@
                 tools:text="Side Name"
                 android:text="@{viewModel.side}"/>
             <TextView
+                android:id="@+id/sidePrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/sideName"
+                android:text="@{viewModel.sidePrice}"/>
+            <TextView
                 android:id="@+id/accompanimentName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -64,6 +71,13 @@
                 app:layout_constraintStart_toStartOf="parent"
                 tools:text="Accompaniment Name"
                 android:text="@{viewModel.accompaniment}"/>
+            <TextView
+                android:id="@+id/accompanimentPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/accompanimentName"
+                android:text="@{viewModel.accompanimentPrice}"/>
 
             <View
                 android:id="@+id/divider"
