@@ -6,10 +6,16 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
 import com.example.lunchtray.R
+import com.example.lunchtray.data.DataSource
 import java.text.NumberFormat
 
 class LunchViewModel: ViewModel() {
+    //TODO: use menuItems instead of LiveData String. Remove entree price property
+    
+    // Didn't know that google provided the model till after I finished the assignment from scratch
 
+    // Map of menu items
+    val menuItems = DataSource.menuItems
 
     private val _entree = MutableLiveData<String>()
     val entree: LiveData<String> = _entree
