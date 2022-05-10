@@ -36,7 +36,7 @@
                     android:layout_height="match_parent"
                     android:checked="@{viewModel.accompaniment.equals(@string/lunch_roll)}"
                     android:onClick="@{() -> viewModel.setAccompaniment(@string/lunch_roll)}"
-                    android:text="@string/lunch_roll">
+                    android:text='@{viewModel.menuItems["bread"].name}'>
                 </RadioButton>
 
                 <TextView

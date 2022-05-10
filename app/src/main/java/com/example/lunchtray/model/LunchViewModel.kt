@@ -11,7 +11,7 @@ import java.text.NumberFormat
 
 class LunchViewModel: ViewModel() {
     //TODO: use menuItems instead of LiveData String. Remove entree price property
-    
+
     // Didn't know that google provided the model till after I finished the assignment from scratch
 
     // Map of menu items
@@ -91,6 +91,10 @@ class LunchViewModel: ViewModel() {
 
     fun noFoodSelected(): Boolean {
         return _entree.value.isNullOrEmpty()
+    }
+
+    fun hello(): String {
+        return "Hello"
     }
 
     // used for as helper for setting and for default values
