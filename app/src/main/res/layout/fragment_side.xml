@@ -36,17 +36,20 @@
                     android:layout_height="match_parent"
                     android:checked="@{viewModel.side.equals(@string/summer_salad)}"
                     android:onClick="@{() -> viewModel.setSide(@string/summer_salad)}"
-                    android:text="@string/summer_salad">
+                    android:text='@{viewModel.menuItems["salad"].name}'
+                    tools:text="Side 1">
                 </RadioButton>
 
                 <TextView
                     style="@style/Description_textview"
-                    android:text="@string/summer_salad_description">
+                    android:text='@{viewModel.menuItems["salad"].description}'
+                    tools:text="Side 1 Description">
                 </TextView>
 
                 <TextView
                     style="@style/Price_textview"
-                    android:text="@string/summer_salad_price">
+                    android:text='@{viewModel.menuItems["salad"].getFormattedPrice()}'
+                    tools:text="$0.00">
                 </TextView>
 
                 <View
@@ -58,17 +61,20 @@
                     android:layout_height="match_parent"
                     android:checked="@{viewModel.side.equals(@string/butternut_squash_soup)}"
                     android:onClick="@{() -> viewModel.setSide(@string/butternut_squash_soup)}"
-                    android:text="@string/butternut_squash_soup">
+                    android:text='@{viewModel.menuItems["soup"].name}'
+                    tools:text="Side 2">
                 </RadioButton>
 
                 <TextView
                     style="@style/Description_textview"
-                    android:text="@string/butternut_squash_soup_description">
+                    android:text='@{viewModel.menuItems["soup"].description}'
+                    tools:text="Side 2 Description">
                 </TextView>
 
                 <TextView
                     style="@style/Price_textview"
-                    android:text="@string/butternut_squash_soup_price">
+                    android:text='@{viewModel.menuItems["soup"].getFormattedPrice()}'
+                    tools:text="$0.00">
                 </TextView>
 
                 <View
@@ -80,17 +86,20 @@
                     android:layout_height="match_parent"
                     android:checked="@{viewModel.side.equals(@string/spicy_potatoes)}"
                     android:onClick="@{() -> viewModel.setSide(@string/spicy_potatoes)}"
-                    android:text="@string/spicy_potatoes">
+                    android:text='@{viewModel.menuItems["potatoes"].name}'
+                    tools:text="Side 3">
                 </RadioButton>
 
                 <TextView
                     style="@style/Description_textview"
-                    android:text="@string/spicy_potatoes_description">
+                    android:text='@{viewModel.menuItems["potatoes"].description}'
+                    tools:text="Side 3 Description">
                 </TextView>
 
                 <TextView
                     style="@style/Price_textview"
-                    android:text="@string/spicy_potatoes_price">
+                    android:text='@{viewModel.menuItems["potatoes"].getFormattedPrice()}'
+                    tools:text="$0.00">
                 </TextView>
 
                 <View
@@ -102,17 +111,20 @@
                     android:layout_height="match_parent"
                     android:checked="@{viewModel.side.equals(@string/coconut_rice)}"
                     android:onClick="@{() -> viewModel.setSide(@string/coconut_rice)}"
-                    android:text="@string/coconut_rice">
+                    android:text='@{viewModel.menuItems["rice"].name}'
+                    tools:text="Side 4">
                 </RadioButton>
 
                 <TextView
                     style="@style/Description_textview"
-                    android:text="@string/coconut_rice_description">
+                    android:text='@{viewModel.menuItems["rice"].description}'
+                    tools:text="Side 4 Description">
                 </TextView>
 
                 <TextView
                     style="@style/Price_textview"
-                    android:text="@string/_1_50">
+                    android:text='@{viewModel.menuItems["rice"].getFormattedPrice()}'
+                    tools:text="$0.00">
                 </TextView>
 
                 <View
