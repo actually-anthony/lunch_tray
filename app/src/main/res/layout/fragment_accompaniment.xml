@@ -30,23 +30,27 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 >
+                
 
                 <RadioButton
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:checked="@{viewModel.accompaniment.equals(@string/lunch_roll)}"
                     android:onClick="@{() -> viewModel.setAccompaniment(@string/lunch_roll)}"
-                    android:text='@{viewModel.menuItems["bread"].name}'>
+                    android:text='@{viewModel.menuItems["bread"].name}'
+                    tools:text="Accompaniment 1">
                 </RadioButton>
 
                 <TextView
                     style="@style/Description_textview"
-                    android:text="@string/lunch_roll_description">
+                    android:text='@{viewModel.menuItems["bread"].description}'
+                    tools:text="Accompaniment 1 Description">
                 </TextView>
 
                 <TextView
                     style="@style/Price_textview"
-                    android:text="@string/lunch_roll_price">
+                    android:text='@{viewModel.menuItems["bread"].getFormattedPrice()}'
+                    tools:text="$0.00">
                 </TextView>
 
                 <View
@@ -58,17 +62,20 @@
                     android:layout_height="match_parent"
                     android:checked="@{viewModel.accompaniment.equals(@string/mixed_berries)}"
                     android:onClick="@{() -> viewModel.setAccompaniment(@string/mixed_berries)}"
-                    android:text="@string/mixed_berries">
+                    android:text='@{viewModel.menuItems["berries"].name}'
+                    tools:text="Accompaniment 2">
                 </RadioButton>
 
                 <TextView
                     style="@style/Description_textview"
-                    android:text="@string/mixed_berries_description">
+                    android:text='@{viewModel.menuItems["berries"].description}'
+                    tools:text="Accompaniment 2 Description">
                 </TextView>
 
                 <TextView
                     style="@style/Price_textview"
-                    android:text="@string/mixed_berries_price">
+                    android:text='@{viewModel.menuItems["berries"].getFormattedPrice()}'
+                    tools:text="$0.00">
                 </TextView>
 
                 <View
@@ -80,17 +87,20 @@
                     android:layout_height="match_parent"
                     android:checked="@{viewModel.accompaniment.equals(@string/pickled_veggies)}"
                     android:onClick="@{() -> viewModel.setAccompaniment(@string/pickled_veggies)}"
-                    android:text="@string/pickled_veggies">
+                    android:text='@{viewModel.menuItems["pickles"].name}'
+                    tools:text="Accompaniment 3">
                 </RadioButton>
 
                 <TextView
                     style="@style/Description_textview"
-                    android:text="@string/pickled_veggies_description">
+                    android:text='@{viewModel.menuItems["pickles"].description}'
+                    tools:text="Accompaniment 3 Description">
                 </TextView>
 
                 <TextView
                     style="@style/Price_textview"
-                    android:text="@string/pickled_veggies_price">
+                    android:text='@{viewModel.menuItems["pickles"].getFormattedPrice()}'
+                    tools:text="$0.00">
                 </TextView>
 
                 <View
